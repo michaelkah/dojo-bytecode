@@ -5,13 +5,24 @@
 * Compiler: Build > Recompile
 * Decompiler: View > Show Decompiled Class
 * Bytecode-Viewer: View > Show Bytecode
-* Compiler-Settings: Settings > Build, Execution, Deployment > Compiler > Java Compiler > Additional command line parameters: ```-g:none```
-* Round Trip:
-  * Java
-  * Compiler
-  * Decompiler
-  * Diff
-  * Compiler
+* Compiler-Settings: Settings > Build, Execution, Deployment > Compiler > Java Compiler > Additional command line parameters: ```-g``` und ```-g:none```
+
+## Aufgabe: Round Trip
+
+```mermaid
+flowchart TD
+    A(Hand-written Java code A) -->|compile| B(Bytecode A)
+    B -->|decompile| C(Decompiled Java code B)
+    C -->|compile| D(Bytecode B)
+    A -.diff.- C
+    D -.diff.- B
+```
+
+Tipps:
+* Das Hello-World-Programm erweitern, z.B. zwei Zahlen addieren
+* Decompilierten Java-Code B in einer neuen Klasse (z.B. Main2) im `src`-Ordner speichern
+* Compiler-Parameter ```-g``` und ```-g:none``` ausprobieren
+* Diff zwischen Java-Code A und B bzw. Bytecode A und B anschauen
 
 ## Vorbereitung: Java 8 einstellen
 
@@ -57,8 +68,20 @@ Assembler:
 java -jar lib/chasm.jar src/Main.chasm out/Main.class 
 ```
 
-Links:
-* [Chasm - Java assembler and disassembler using S-expressions](https://github.com/minad/chasm)
-* [List of Java bytecode instructions - Wikipedia
-  ](https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions)
+## Aufgaben
+
+* Änderungen am Bytecode vornehmen, z.B.:
+* ... eine Variable definieren
+* ... eine Methode aufrufen
+* ... eine if-Abfrage einbauen
+* ... eine while-Schleife einbauen
+* ... eine neue Methode definieren
+* ... eine neue Klasse definieren
+* Ein lauffähiges Bytecode-Programm _from scratch_ schreiben
+
+## Nützliche Links
+* [javac - Oracle](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html)
+* [javap - Oracle](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javap.html)
+* [Chasm - GitHub](https://github.com/minad/chasm)
+* [List of Java bytecode instructions - Wikipedia](https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions)
 * [The Java Virtual Machine Instruction Set - Oracle](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-6.html)
