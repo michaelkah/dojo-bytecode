@@ -59,7 +59,9 @@ java -cp out Main
 javap -c -p -s -l -v out/Main.class
 ```
 
-Achtung: Im JDK gibt es kein Gegenstück zu `javap`!
+Achtung!
+* Die Bytecode-Syntax von `javap` ist anders als die vom IntelliJ-Bytecode-Viewer
+* Im JDK gibt es kein Gegenstück zu `javap`
 
 Mehr Details zu den Kommandos gibt es hier:
 * [javac - Oracle](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html)
@@ -72,6 +74,8 @@ Disassembler:
 ```shell
 java -jar lib/chasm.jar out/Main.class src/Main.chasm
 ```
+
+Achtung: Die Bytecode-Syntax von Chasm ist erneut anders als die von `javap` und vom IntelliJ-Bytecode-Viewer!
 
 Assembler:
 ```shell
@@ -89,7 +93,7 @@ Nützliche Links:
 
 * Das Hello-World-Programm schrittweise in Java erweitern, z.B. eine (primitive) lokale Variable definieren und ausgeben
 * Kompilieren (mit `javac` oder IntelliJ)
-* Die kompilierte Klasse disassemblieren (mit Chasm) und den Bytecode verstehen
+* Die kompilierte Klasse disassemblieren (mit Chasm) und den Bytecode verstehen (am besten mit Hilfe der Wikipedia-Liste)
 * Den Bytecode manuell erweitern, z.B. eine zweite lokale Variable definieren
 * Assemblieren (mit Chasm)
 * Ausführen (mit `java` oder IntelliJ) und das Ergebnis prüfen/bewundern
